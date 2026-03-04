@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="20dp">
+
+    <ImageButton
+        android:id="@+id/btnVoltar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_revert"
+        android:tint="#00FF00" />
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="🌐 VERIFICADOR IP/DNS"
+        android:textColor="#00FF00"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Analise resoluções de nomes de domínio (DNS) e verifique a conectividade de servidores remotos em tempo real."
+        android:textColor="#888888"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/editAlvo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/txtDescricao"
+        android:layout_marginTop="20dp"
+        android:background="#111111"
+        android:hint="Ex: google.com"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#555555" />
+
+    <Button
+        android:id="@+id/btnAnalisar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/editAlvo"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#00FF00"
+        android:text="ANALISAR ALVO"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnCopiar"
+        android:layout_below="@id/btnAnalisar"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="#0A0A0A"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/txtResultadoDns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text=">> AGUARDANDO ALVO..."
+            android:textColor="#00FF00"
+            android:textSize="13sp" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnCopiar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:backgroundTint="#00FF00"
+        android:text="📋 COPIAR LOG"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+</RelativeLayout>

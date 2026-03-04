@@ -31,5 +31,9 @@
             android:name=".RastreadorIpActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".DnsActivity"
+            android:exported="false" />
+
     </application>
 </manifest>
