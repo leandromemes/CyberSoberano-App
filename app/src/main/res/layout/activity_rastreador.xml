@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="20dp">
+
+    <ImageButton
+        android:id="@+id/btnVoltar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_revert"
+        android:tint="#00FF00" />
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="📡 RASTREADOR DE IP"
+        android:textColor="#00FF00"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Esta ferramenta realiza o rastreio do seu endereço IP público, fornecendo dados precisos sobre sua geolocalização, provedor de internet (ISP) e coordenadas globais."
+        android:textColor="#888888"
+        android:textSize="12sp" />
+
+    <ProgressBar
+        android:id="@+id/progressoRastreio"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/txtDescricao"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:indeterminateTint="#00FF00"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnCopiar"
+        android:layout_below="@id/progressoRastreio"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="#0A0A0A"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/txtResultadoFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text=">> AGUARDANDO COMANDO..."
+            android:textColor="#00FF00"
+            android:textSize="13sp" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnCopiar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:backgroundTint="#00FF00"
+        android:text="📋 COPIAR RELATÓRIO"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+</RelativeLayout>
