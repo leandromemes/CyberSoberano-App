@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="20dp">
+
+    <ImageButton
+        android:id="@+id/btnVoltar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_revert"
+        android:tint="#00FF00" />
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="📢 DIVULGAR GRUPO"
+        android:textColor="#00FF00"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editLink"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/titulo"
+        android:layout_marginTop="30dp"
+        android:hint="Cole o link do WhatsApp aqui"
+        android:textColorHint="#555555"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00FF00"
+        android:inputType="textUri" />
+
+    <ImageView
+        android:id="@+id/imgGrupo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/editLink"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+    <EditText
+        android:id="@+id/editNome"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/imgGrupo"
+        android:layout_marginTop="10dp"
+        android:hint="Nome do Grupo"
+        android:textColorHint="#555555"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00FF00" />
+
+    <TextView
+        android:id="@+id/txtLabelCat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editNome"
+        android:layout_marginTop="15dp"
+        android:text="ESCOLHER CATEGORIA:"
+        android:textColor="#00FF00"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinnerCategoria"
+        android:layout_width="800dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/editNome"
+        android:layout_marginTop="31dp"
+        android:backgroundTint="#00FF00"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnConfirmarDivulgacao"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="47dp"
+        android:backgroundTint="#00FF00"
+        android:text="CONFIRMAR DIVULGAÇÃO"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+</RelativeLayout>

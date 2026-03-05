@@ -13,7 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /* * Desenvolvido por Leandro | CyberSoberano
- * Painel de Elite com 4 Ferramentas e Auto-Update
+ * Painel de Elite com 5 Ferramentas e Auto-Update
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -32,25 +32,33 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, NetScanActivity.class)));
         }
 
-        // 2. BOTÃO: RASTREADOR DE IP (ID btnHashGen no XML)
+        // 2. BOTÃO: RASTREADOR DE IP
         Button btnRastreador = findViewById(R.id.btnHashGen);
         if (btnRastreador != null) {
             btnRastreador.setOnClickListener(v ->
                     startActivity(new Intent(MainActivity.this, RastreadorIpActivity.class)));
         }
 
-        // 3. BOTÃO: VERIFICADOR DNS (ID btnDNS no XML)
+        // 3. BOTÃO: VERIFICADOR DNS
         Button btnDns = findViewById(R.id.btnDNS);
         if (btnDns != null) {
             btnDns.setOnClickListener(v ->
                     startActivity(new Intent(MainActivity.this, DnsActivity.class)));
         }
 
-        // 4. BOTÃO: CURSOS HACKER (ID btnCursos no XML)
+        // 4. BOTÃO: CURSOS HACKER
         Button btnCursos = findViewById(R.id.btnCursos);
         if (btnCursos != null) {
             btnCursos.setOnClickListener(v ->
                     startActivity(new Intent(MainActivity.this, CursosActivity.class)));
+        }
+
+        // --- NOVO --- 5. BOTÃO: DIVULGAÇÃO DE GRUPOS [cite: 2026-03-02]
+        // Certifique-se de que no seu activity_main.xml o ID do botão seja btnGrupos
+        Button btnGrupos = findViewById(R.id.btnGrupos);
+        if (btnGrupos != null) {
+            btnGrupos.setOnClickListener(v ->
+                    startActivity(new Intent(MainActivity.this, GruposCategoriasActivity.class)));
         }
     }
 
@@ -93,3 +101,4 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 }
+// Créditos: dev Leandro - CyberSoberano [cite: 2026-01-31]

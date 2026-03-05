@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "937264732066",
+    "project_id": "cybersoberano",
+    "storage_bucket": "cybersoberano.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937264732066:android:45284568efd3d7ff78c4fb",
+        "android_client_info": {
+          "package_name": "com.cybersoberano.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmwiouFzZ9mlovOBnITrAw8kLIm-3JFOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

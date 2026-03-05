@@ -39,5 +39,11 @@
             android:name=".CursosActivity"
             android:exported="false" />
 
+        <activity android:name=".AdicionarGrupoActivity" />
+        <activity android:name=".GruposCategoriasActivity" />
+        <activity android:name=".ListaGruposActivity" />
+
+        <activity android:name=".MeusGruposActivity" />
+
     </application>
 </manifest>
