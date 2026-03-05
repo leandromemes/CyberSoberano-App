@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🛡️ CYBERSOBERANO 🛡️"
+                android:text="🛡️ CYBERSOBERANO"
                 android:textColor="#00FF00"
                 android:textSize="32sp"
                 android:textStyle="bold" />
@@ -51,7 +51,7 @@
         <Button android:id="@+id/btnHashGen" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="📍 RASTREADOR DE IP" android:textColor="#FFFFFF" />
         <Button android:id="@+id/btnDNS" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="🌐 VERIFICADOR IP/DNS" android:textColor="#FFFFFF" />
 
-        <Button android:id="@+id/btnCursos" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="30dp" android:backgroundTint="#111111" android:text="🎓 CURSOS HACKER (TELEGRAM)" android:textColor="#FFFFFF" />
+        <Button android:id="@+id/btnCursos" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="30dp" android:backgroundTint="#111111" android:text="🎓 CURSOS HACKER" android:textColor="#FFFFFF" />
 
         <TextView
             android:layout_width="wrap_content"

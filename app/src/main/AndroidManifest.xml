@@ -35,5 +35,9 @@
             android:name=".DnsActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".CursosActivity"
+            android:exported="false" />
+
     </application>
 </manifest>
