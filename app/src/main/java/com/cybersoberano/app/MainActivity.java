@@ -13,7 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /* * Desenvolvido por Leandro | CyberSoberano
- * Painel de Elite com 3 Ferramentas e Auto-Update
+ * Painel de Elite com 4 Ferramentas e Auto-Update
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
         if (btnDns != null) {
             btnDns.setOnClickListener(v ->
                     startActivity(new Intent(MainActivity.this, DnsActivity.class)));
+        }
+
+        // 4. BOTÃO: CURSOS HACKER (ID btnCursos no XML)
+        Button btnCursos = findViewById(R.id.btnCursos);
+        if (btnCursos != null) {
+            btnCursos.setOnClickListener(v ->
+                    startActivity(new Intent(MainActivity.this, CursosActivity.class)));
         }
     }
 

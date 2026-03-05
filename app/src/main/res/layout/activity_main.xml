@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🛡️ CYBERSOBERANO"
+                android:text="🛡️ CYBERSOBERANO 🛡️"
                 android:textColor="#00FF00"
                 android:textSize="32sp"
                 android:textStyle="bold" />
@@ -48,9 +48,10 @@
             android:textStyle="bold" />
 
         <Button android:id="@+id/btnNetScan" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="🔍 NET SCAN (VARREDURA)" android:textColor="#FFFFFF" />
-        <Button android:id="@+id/btnHashGen" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="🔑 GERADOR DE HASHES" android:textColor="#FFFFFF" />
+        <Button android:id="@+id/btnHashGen" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="📍 RASTREADOR DE IP" android:textColor="#FFFFFF" />
         <Button android:id="@+id/btnDNS" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="🌐 VERIFICADOR IP/DNS" android:textColor="#FFFFFF" />
-        <Button android:id="@+id/btnPentest" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="30dp" android:backgroundTint="#111111" android:text="⚠️ TESTE VULNERABILIDADE" android:textColor="#FF0000" />
+
+        <Button android:id="@+id/btnCursos" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="30dp" android:backgroundTint="#111111" android:text="🎓 CURSOS HACKER (TELEGRAM)" android:textColor="#FFFFFF" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -72,7 +73,7 @@
             android:textColor="#00FF00"
             android:textStyle="bold" />
 
-        <Button android:id="@+id/btnPremium" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#222211" android:text="💰 LOJA PREMIUM" android:textColor="#FFFF00" />
+        <Button android:id="@+id/btnPremium" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="💰 LOJA PREMIUM" android:textColor="#FFFFFF" />
         <Button android:id="@+id/btnAds" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="📺 ASSISTIR ADS (FREE)" android:textColor="#FFFFFF" />
         <Button android:id="@+id/btnSuporte" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="40dp" android:backgroundTint="#111111" android:text="🛠️ SUPORTE TÉCNICO" android:textColor="#FFFFFF" />
 
