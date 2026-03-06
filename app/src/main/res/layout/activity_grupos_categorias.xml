@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    android:padding="20dp">
+    android:padding="40dp">
 
     <ImageButton
         android:id="@+id/btnVoltar"
@@ -108,7 +108,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#00FF00"
         android:text="📢 DIVULGAR NOVO GRUPO"
         android:textColor="#000000"

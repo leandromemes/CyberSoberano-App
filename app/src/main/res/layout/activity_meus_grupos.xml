@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    android:padding="15dp">
+    android:paddingTop="50dp"  android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
     <ImageButton
         android:id="@+id/btnVoltar"
         android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_height="30dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@android:drawable/ic_menu_revert"
         android:tint="#00FF00" />

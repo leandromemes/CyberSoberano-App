@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:paddingTop="45dp"
+    android:paddingBottom="30dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="> CYBERSOBERANO_TERMINAL v1.0"
+        android:textColor="#00FF00"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressInstalacao"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminate="true"
+        android:progressTint="#00FF00" />
+
+    <ScrollView
+        android:id="@+id/scrollTerminal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#050505">
+
+        <TextView
+            android:id="@+id/txtLogTerminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aguardando comando..."
+            android:textColor="#00FF00"
+            android:fontFamily="monospace"
+            android:textSize="12sp" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/editComando"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Digite aqui..."
+            android:textColor="#00FF00"
+            android:textColorHint="#55FF55"
+            android:backgroundTint="#00FF00" />
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENVIAR"
+            android:backgroundTint="#00FF00"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnParar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="parar"
+            android:backgroundTint="#FF0000"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnInstalarBot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#00FF00"
+        android:text="🚀 INSTALAR E RODAR GOTICA-BOT"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+</LinearLayout>

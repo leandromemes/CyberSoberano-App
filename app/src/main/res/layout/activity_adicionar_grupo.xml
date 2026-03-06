@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    android:padding="20dp">
+    android:paddingTop="50dp"  android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
     <ImageButton
         android:id="@+id/btnVoltar"
@@ -80,7 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="47dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#00FF00"
         android:text="CONFIRMAR DIVULGAÇÃO"
         android:textColor="#000000"

@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONObject;
@@ -13,52 +14,36 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /* * Desenvolvido por Leandro | CyberSoberano
- * Painel de Elite com 5 Ferramentas e Auto-Update
+ * Painel de Elite - Código Otimizado [cite: 2026-01-28, 2026-03-02]
  */
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "CyberSoberano";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Sistema de Alerta de Atualização
         verificarAtualizacaoSoberana();
 
-        // 1. BOTÃO: NET SCAN
-        Button btnNetScan = findViewById(R.id.btnNetScan);
-        if (btnNetScan != null) {
-            btnNetScan.setOnClickListener(v ->
-                    startActivity(new Intent(MainActivity.this, NetScanActivity.class)));
-        }
+        // Mapeamento dos botões com verificação de segurança [cite: 2026-03-02]
+        configurarBotao(R.id.btnNetScan, NetScanActivity.class);
+        configurarBotao(R.id.btnHashGen, RastreadorIpActivity.class);
+        configurarBotao(R.id.btnDNS, DnsActivity.class);
+        configurarBotao(R.id.btnCursos, CursosActivity.class);
+        configurarBotao(R.id.btnGrupos, GruposCategoriasActivity.class);
+        configurarBotao(R.id.btnAlugarBot, TerminalActivity.class);
 
-        // 2. BOTÃO: RASTREADOR DE IP
-        Button btnRastreador = findViewById(R.id.btnHashGen);
-        if (btnRastreador != null) {
-            btnRastreador.setOnClickListener(v ->
-                    startActivity(new Intent(MainActivity.this, RastreadorIpActivity.class)));
-        }
+        // Se ainda não criou a GeradorLinkActivity, comente a linha abaixo para não dar erro
+        // configurarBotao(R.id.btnLinkWhats, GeradorLinkActivity.class);
+    }
 
-        // 3. BOTÃO: VERIFICADOR DNS
-        Button btnDns = findViewById(R.id.btnDNS);
-        if (btnDns != null) {
-            btnDns.setOnClickListener(v ->
-                    startActivity(new Intent(MainActivity.this, DnsActivity.class)));
-        }
-
-        // 4. BOTÃO: CURSOS HACKER
-        Button btnCursos = findViewById(R.id.btnCursos);
-        if (btnCursos != null) {
-            btnCursos.setOnClickListener(v ->
-                    startActivity(new Intent(MainActivity.this, CursosActivity.class)));
-        }
-
-        // --- NOVO --- 5. BOTÃO: DIVULGAÇÃO DE GRUPOS [cite: 2026-03-02]
-        // Certifique-se de que no seu activity_main.xml o ID do botão seja btnGrupos
-        Button btnGrupos = findViewById(R.id.btnGrupos);
-        if (btnGrupos != null) {
-            btnGrupos.setOnClickListener(v ->
-                    startActivity(new Intent(MainActivity.this, GruposCategoriasActivity.class)));
+    // Método otimizado para configurar botões (Expression Lambda) [cite: 2026-03-02]
+    private void configurarBotao(int id, Class<?> activityClass) {
+        Button btn = findViewById(id);
+        if (btn != null) {
+            btn.setOnClickListener(v -> startActivity(new Intent(this, activityClass)));
         }
     }
 
@@ -76,29 +61,35 @@ public class MainActivity extends AppCompatActivity {
                 reader.close();
 
                 JSONObject json = new JSONObject(sb.toString());
-                int novaVersaoCode = json.getInt("versionCode");
-                String mensagem = json.getString("message");
-                String urlDownload = json.getString("url");
+                processarJsonAtualizacao(json);
 
-                int versaoAtualCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
-
-                if (novaVersaoCode > versaoAtualCode) {
-                    runOnUiThread(() -> {
-                        new AlertDialog.Builder(this)
-                                .setTitle("🚀 ATUALIZAÇÃO DISPONÍVEL")
-                                .setMessage(mensagem)
-                                .setCancelable(false)
-                                .setPositiveButton("BAIXAR", (dialog, which) -> {
-                                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(urlDownload)));
-                                })
-                                .setNegativeButton("DEPOIS", null)
-                                .show();
-                    });
-                }
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e(TAG, "Erro na verificação de atualização: " + e.getMessage());
             }
         }).start();
+    }
+
+    private void processarJsonAtualizacao(JSONObject json) {
+        try {
+            int novaVersaoCode = json.getInt("versionCode");
+            String mensagem = json.getString("message");
+            String urlDownload = json.getString("url");
+
+            int versaoAtualCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+
+            if (novaVersaoCode > versaoAtualCode) {
+                runOnUiThread(() -> new AlertDialog.Builder(this)
+                        .setTitle("🚀 ATUALIZAÇÃO DISPONÍVEL")
+                        .setMessage(mensagem)
+                        .setCancelable(false)
+                        .setPositiveButton("BAIXAR", (dialog, which) ->
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(urlDownload))))
+                        .setNegativeButton("DEPOIS", null)
+                        .show());
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Erro ao processar JSON: " + e.getMessage());
+        }
     }
 }
 // Créditos: dev Leandro - CyberSoberano [cite: 2026-01-31]

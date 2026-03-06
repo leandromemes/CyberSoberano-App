@@ -25,10 +25,7 @@ public class ListaGruposActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_grupos);
 
-        // Pega a categoria selecionada na tela anterior
         categoriaSelecionada = getIntent().getStringExtra("CATEGORIA_SELECIONADA");
-
-        // Botão Voltar Padrão [cite: 2026-02-04]
         findViewById(R.id.btnVoltar).setOnClickListener(v -> finish());
 
         TextView txtTitulo = findViewById(R.id.titulo);
@@ -45,29 +42,25 @@ public class ListaGruposActivity extends AppCompatActivity {
     private void carregarDadosDoFirebase() {
         DatabaseReference db = FirebaseDatabase.getInstance().getReference("Grupos");
 
-        // Filtra os grupos pela categoria e escuta mudanças em tempo real [cite: 2026-03-02]
-        db.orderByChild("categoria").equalTo(categoriaSelecionada)
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        listaGrupos.clear();
-                        for (DataSnapshot postSnapshot : snapshot.getChildren()) {
-                            Grupo grupo = postSnapshot.getValue(Grupo.class);
-                            if (grupo != null) {
-                                listaGrupos.add(grupo);
-                            }
-                        }
-
-                        // Liga os dados ao Adapter para exibir na tela [cite: 2026-03-02]
-                        GrupoAdapter adapter = new GrupoAdapter(listaGrupos);
-                        recyclerGrupos.setAdapter(adapter);
+        // Ordena por lastBump para os impulsionados subirem [cite: 2026-03-02]
+        db.orderByChild("lastBump").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaGrupos.clear();
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    Grupo grupo = postSnapshot.getValue(Grupo.class);
+                    if (grupo != null && grupo.getCategoria().equals(categoriaSelecionada)) {
+                        // Adiciona sempre no início (index 0) para o maior lastBump ficar no topo [cite: 2026-03-02]
+                        listaGrupos.add(0, grupo);
                     }
+                }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        // Ocorreu um erro no banco de dados
-                    }
-                });
+                GrupoAdapter adapter = new GrupoAdapter(listaGrupos);
+                recyclerGrupos.setAdapter(adapter);
+            }
+
+            @Override public void onCancelled(@NonNull DatabaseError error) {}
+        });
     }
 }
 // Créditos: dev Leandro - CyberSoberano [cite: 2026-01-31]
