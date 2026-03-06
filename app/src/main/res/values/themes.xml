@@ -1,9 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CyberSoberano" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <style name="Theme.CyberSoberano" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryVariant">#000000</item>
+        <item name="colorOnPrimary">#00FF00</item>
+
+        <item name="colorSecondary">#00FF00</item>
+        <item name="colorSecondaryVariant">#00CC00</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">#000000</item>
+
+        <item name="android:windowBackground">#000000</item>
+
+        <item name="alertDialogTheme">@style/ThemeOverlay.CyberSoberano.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.CyberSoberano.Dialog</item>
     </style>
 
-    <style name="Theme.CyberSoberano" parent="Base.Theme.CyberSoberano" />
+    <style name="Theme.CyberSoberano.Light.DarkActionBar" parent="Theme.CyberSoberano" />
+    <style name="Theme.CyberSoberano.Light.NoActionBar" parent="Theme.CyberSoberano" />
+    <style name="Theme.CyberSoberano.DayNight.DarkActionBar" parent="Theme.CyberSoberano" />
+    <style name="Theme.CyberSoberano.DayNight.NoActionBar" parent="Theme.CyberSoberano" />
+
+    <style name="ThemeOverlay.CyberSoberano.Dialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorPrimary">#00FF00</item>
+        <item name="android:textColorPrimary">#00FF00</item>
+        <item name="android:background">#111111</item>
+    </style>
+
 </resources>

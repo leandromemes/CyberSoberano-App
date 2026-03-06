@@ -1,0 +1,16 @@
+# Configuração de atributos do Git para o projeto CyberSoberano
+
+# O Git tentará detectar automaticamente se o arquivo é texto ou binário
+* text=auto
+
+# Arquivos Batch (Windows) devem usar CRLF (padrão Windows)
+*.bat       text eol=crlf
+
+# Arquivos do Gradle DEVEM usar LF (padrão Linux/Android)
+*.gradle    text eol=lf
+
+# Arquivos de compilação do NDK (Android.mk) DEVEM usar LF
+*.mk        text eol=lf
+
+# Scripts de terminal e automação de bots DEVEM usar LF
+*.sh        text eol=lf

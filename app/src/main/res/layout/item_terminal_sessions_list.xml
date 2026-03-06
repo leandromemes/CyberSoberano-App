@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textview.MaterialTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/session_title"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@drawable/session_background_selected"
+    android:ellipsize="marquee"
+    android:gravity="start|center_vertical"
+    android:paddingStart="20dp"
+    android:paddingEnd="10dp"
+    android:textColor="#FFFFFF"
+    android:textSize="15sp"
+    android:textStyle="normal"
+    android:typeface="monospace"
+    android:singleLine="true" />

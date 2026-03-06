@@ -13,6 +13,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.net.InetAddress;
 
+/* * * Desenvolvido por Leandro | CyberSoberano
+ * Módulo de Resolução DNS e Verificação de Host
+ */
 public class DnsActivity extends AppCompatActivity {
     private TextView txtResultado;
     private EditText editAlvo;
@@ -28,34 +31,48 @@ public class DnsActivity extends AppCompatActivity {
         txtResultado = findViewById(R.id.txtResultadoDns);
         editAlvo = findViewById(R.id.editAlvo);
         Button btnAnalisar = findViewById(R.id.btnAnalisar);
+        Button btnCopiar = findViewById(R.id.btnCopiar);
 
+        // Ação de Voltar
         findViewById(R.id.btnVoltar).setOnClickListener(v -> finish());
 
+        // Ação de Analisar
         btnAnalisar.setOnClickListener(v -> {
             String alvo = editAlvo.getText().toString().trim();
-            if (!alvo.isEmpty()) iniciarAnalise(alvo);
-        });
-
-        findViewById(R.id.btnCopiar).setOnClickListener(v -> {
-            if (!logFinal.isEmpty()) {
-                ClipboardManager cb = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                cb.setPrimaryClip(ClipData.newPlainText("DnsLog", logFinal));
-                Toast.makeText(this, "Log copiado!", Toast.LENGTH_SHORT).show();
+            if (!alvo.isEmpty()) {
+                iniciarAnalise(alvo);
+            } else {
+                Toast.makeText(this, "Digite um domínio (ex: google.com)", Toast.LENGTH_SHORT).show();
             }
         });
+
+        // Ação de Copiar
+        if (btnCopiar != null) {
+            btnCopiar.setOnClickListener(v -> {
+                if (!logFinal.isEmpty()) {
+                    ClipboardManager cb = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    cb.setPrimaryClip(ClipData.newPlainText("DnsLog", logFinal));
+                    Toast.makeText(this, "Log copiado!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     private void iniciarAnalise(String host) {
-        txtResultado.setText(">> INICIANDO RESOLUÇÃO DNS...\n");
+        // Para qualquer animação anterior e limpa o texto
+        handler.removeCallbacks(typewriter);
+        txtResultado.setText(">> [SISTEMA] REQUISITANDO DNS QUERY...\n");
+
         new Thread(() -> {
             try {
+                // Realiza a resolução real do DNS
                 InetAddress address = InetAddress.getByName(host);
                 logFinal = "\n>> [RESULTADOS DNS]\n\n" +
-                        "🎯 ALVO: " + host + "\n" +
-                        "🌐 IP RESOLVIDO: " + address.getHostAddress() + "\n" +
-                        "🏷️ CANONICAL: " + address.getCanonicalHostName() + "\n" +
-                        "📡 STATUS: ATIVO / ONLINE\n\n" +
-                        ">> ANÁLISE CONCLUÍDA.";
+                    "🎯 ALVO: " + host + "\n" +
+                    "🌐 IP RESOLVIDO: " + address.getHostAddress() + "\n" +
+                    "🏷️ CANONICAL: " + address.getCanonicalHostName() + "\n" +
+                    "📡 STATUS: ATIVO / ONLINE\n\n" +
+                    ">> ANÁLISE CONCLUÍDA.";
 
                 runOnUiThread(() -> {
                     txtResultado.setText("");
@@ -63,7 +80,10 @@ public class DnsActivity extends AppCompatActivity {
                     handler.post(typewriter);
                 });
             } catch (Exception e) {
-                runOnUiThread(() -> txtResultado.setText(">> ERRO: ALVO NÃO ENCONTRADO."));
+                runOnUiThread(() -> {
+                    txtResultado.setText(">> ERRO: ALVO NÃO ENCONTRADO.\n" +
+                        ">> VERIFIQUE O DOMÍNIO OU SUA CONEXÃO.");
+                });
             }
         }).start();
     }
@@ -74,7 +94,7 @@ public class DnsActivity extends AppCompatActivity {
             if (charIndex < logFinal.length()) {
                 txtResultado.append(String.valueOf(logFinal.charAt(charIndex)));
                 charIndex++;
-                handler.postDelayed(this, 30);
+                handler.postDelayed(this, 20); // Velocidade de 20ms para parecer mais rápido
             }
         }
     };

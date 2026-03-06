@@ -1,7 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CyberSoberano" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <style name="Theme.CyberSoberano.DayNight.DarkActionBar" parent="Theme.MaterialComponents">
+        <item name="colorPrimary">@color/red_400</item>
+        <item name="colorPrimaryVariant">@color/red_800</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <item name="colorSecondary">@color/grey_400</item>
+        <item name="colorSecondaryVariant">@color/grey_500</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="colorPrimaryDark" tools:targetApi="l">?attr/colorPrimary</item>
+
+        <item name="android:textColorLink">@color/blue_link_dark</item>
     </style>
+
+    <style name="Theme.CyberSoberano.DayNight.NoActionBar" parent="Theme.CyberSoberano.DayNight.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ThemeOverlay.CyberSoberano.Dialog.DayNight" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorPrimary">@color/red_400</item>
+        <item name="colorSurface">#121212</item> <item name="colorOnSurface">#FFFFFF</item> <item name="materialAlertDialogTitlePanelStyle">@style/BaseDialog.Title.Panel</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/BaseDialog.Message.Text.Dark</item>
+    </style>
+
 </resources>

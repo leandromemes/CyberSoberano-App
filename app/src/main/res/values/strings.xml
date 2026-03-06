@@ -1,3 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CyberSoberano</string>
+
+    <string name="shortcut_new_session">Nova Sessão</string>
+    <string name="shortcut_failsafe">Modo de Segurança</string>
+    <string name="shortcut_settings">Configurações</string>
+
+    <string name="title_activity_main">Painel Principal</string>
+    <string name="status_preparando">Preparando ambiente Node.js...</string>
+    <string name="btn_start_text">Ligar Bot WhatsApp</string>
 </resources>

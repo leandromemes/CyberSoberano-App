@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="terminal_notification_id" type="id" />
+    <item name="terminal_notification_channel_id" type="id" />
+
+    <item name="execution_service_notification_id" type="id" />
+
+    <item name="terminal_update_notification_id" type="id" />
+</resources>

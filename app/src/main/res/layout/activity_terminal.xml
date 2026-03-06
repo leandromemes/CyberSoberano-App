@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="80dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✦ GÓTICA BOT ✦"
+            android:textColor="#FF4FCB"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1A0000"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#220000">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚠ REGRA DE CONEXÃO"
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ao conectar, seu bot entrará automaticamente no grupo 'CONEXÃO BOTS'. Não remova o bot do grupo ou sua conexão será encerrada imediatamente!"
+                android:textColor="#CCCCCC"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#111111"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CÓDIGO DE PAREAMENTO"
+                android:textColor="#888888"
+                android:gravity="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtCodigoPareamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="---- ----"
+                android:textColor="#00FF00"
+                android:gravity="center"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#080808"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp">
+
+            <ScrollView
+                android:id="@+id/scrollTerminal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/txtStatusTerminal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text=">> Aguardando número...\n"
+                    android:textColor="#00FF00"
+                    android:textSize="12sp" />
+            </ScrollView>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número do WhatsApp (com DDD):"
+            android:textColor="#FF77FF"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editNumeroBot"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#1A1A1A"
+            android:hint="Ex: 55639..."
+            android:inputType="phone"
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#444444"
+            android:layout_marginBottom="15dp"/>
+
+        <Button
+            android:id="@+id/btnGerarCodigo"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="CONCORDAR E GERAR CÓDIGO"
+            android:backgroundTint="#00FF00"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

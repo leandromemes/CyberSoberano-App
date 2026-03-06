@@ -10,6 +10,7 @@ public class Grupo {
     private String categoria;
     private String donoId;
     private String idFirebase;
+    private long lastBump; // Novo campo para controle de impulso [cite: 2026-03-02]
 
     // Construtor vazio necessário para o Firebase
     public Grupo() {
@@ -21,6 +22,7 @@ public class Grupo {
         this.imagem = imagem;
         this.categoria = categoria;
         this.donoId = donoId;
+        this.lastBump = System.currentTimeMillis(); // Inicia com o tempo atual [cite: 2026-03-02]
     }
 
     // Getters e Setters Completos [cite: 2026-01-28]
@@ -41,5 +43,8 @@ public class Grupo {
 
     public String getIdFirebase() { return idFirebase; }
     public void setIdFirebase(String idFirebase) { this.idFirebase = idFirebase; }
+
+    public long getLastBump() { return lastBump; }
+    public void setLastBump(long lastBump) { this.lastBump = lastBump; }
 }
 // Créditos: dev Leandro - CyberSoberano [cite: 2026-01-31]

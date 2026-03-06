@@ -1,0 +1,11 @@
+# Configuração para compilação remota do CyberSoberano no JitPack
+jdk:
+  - openjdk17
+
+env:
+  # Versão do NDK sincronizada com o seu gradle.properties
+  JITPACK_NDK_VERSION: "26.1.10909125"
+
+before_install:
+  # Garante que o script gradlew tenha permissão de execução no servidor
+  - chmod +x gradlew

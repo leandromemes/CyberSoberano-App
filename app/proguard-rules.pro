@@ -1,21 +1,33 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# Créditos: dev Leandro - CyberSoberano
+# Configuração de Proteção e Otimização de Código
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# 1. Ativa a ofuscação (Removemos o -dontobfuscate)
+# Isso transforma nomes de funções em letras como 'a', 'b', 'c' para proteger sua lógica.
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# 2. Mantém as classes essenciais do Android e Firebase para não dar crash
+-keep class com.google.firebase.** { *; }
+-keep class com.google.android.gms.** { *; }
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# 3. Protege as bibliotecas de interface (Glide e Material)
+-keep public class com.github.bumptech.glide.** { *; }
+-keep public class com.google.android.material.** { *; }
+
+# 4. VITAL: Mantém as classes nativas do Terminal e JNI
+# Se ofuscar isso, o motor do bot (npm start) para de funcionar!
+-keep class com.cybersoberano.app.terminal.** { *; }
+-keep class com.termux.** { *; }
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+# 5. Remove logs de depuração para o APK de produção ficar mais limpo
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** v(...);
+    public static *** i(...);
+}
+
+# 6. Configurações de Atributos de Segurança
+-keepattributes Signature, *Annotation*, EnclosingMethod, InnerClasses
+-renamesourcefileattribute SourceFile
+-keepattributes SourceFile, LineNumberTable

@@ -1,0 +1,15 @@
+# Configurações de Editor para o Projeto CyberSoberano
+# Mantém a indentação e o formato de arquivos consistentes.
+
+root = true
+
+[*]
+end_of_line = lf              # Usa o padrão de quebra de linha do Linux (essencial para Termux)
+insert_final_newline = true   # Sempre deixa uma linha em branco no fim (evita erros de compilação C++)
+charset = utf-8               # Garante que caracteres especiais e emojis não quebrem
+indent_style = space          # Usa espaços em vez de TABs (padrão Google/Android)
+indent_size = 4               # Recuo de 4 espaços para Java e XML
+
+[*.{yml,yaml}]
+indent_size = 2               # Recuo menor para arquivos de configuração YAML
+indent_style = space
