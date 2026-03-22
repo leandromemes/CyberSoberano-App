@@ -4,15 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
+<<<<<<< HEAD:app/src/main/res/layout/activity_rastreador_ip.xml
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
     android:paddingTop="30dp">
+=======
+    android:paddingTop="50dp"  android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+>>>>>>> origin/master:app/src/main/res/layout/activity_rastreador.xml
 
     <ImageButton
         android:id="@+id/btnVoltar"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@android:drawable/ic_menu_revert"
         android:contentDescription="Voltar"
@@ -23,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:text="📡 RASTREADOR DE IP"
         android:textColor="#00FF00"
         android:textSize="20sp"
@@ -91,8 +97,13 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
+<<<<<<< HEAD:app/src/main/res/layout/activity_rastreador_ip.xml
         android:layout_marginBottom="20dp"
         android:backgroundTint="#111111"
+=======
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#00FF00"
+>>>>>>> origin/master:app/src/main/res/layout/activity_rastreador.xml
         android:text="📋 COPIAR RELATÓRIO"
         android:textColor="#00FF00"
         android:textStyle="bold" />

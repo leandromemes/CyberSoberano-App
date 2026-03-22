@@ -4,4 +4,14 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.9" />
+      </ProjectState>
+    </option>
+  </component>
+>>>>>>> origin/master
 </project>
