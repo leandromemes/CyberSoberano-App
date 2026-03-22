@@ -35,11 +35,7 @@
                 android:layout_marginTop="-5dp"
                 android:text="PAINEL DE ELITE - DEV LEANDRO"
                 android:textColor="#888888"
-<<<<<<< HEAD
-                android:textSize="9sp"
-=======
                 android:textSize="10sp"
->>>>>>> origin/master
                 android:letterSpacing="0.1" />
         </LinearLayout>
 
@@ -66,7 +62,6 @@
 
         <Button android:id="@+id/btnGrupos" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="💬 DIVULGAR GRUPOS" android:textColor="#FFFFFF" />
         <Button android:id="@+id/btnAlugarBot" android:layout_width="match_parent" android:layout_height="70dp" android:layout_marginBottom="10dp" android:backgroundTint="#111111" android:text="🤖 BOTS PARA WHATSAPP" android:textColor="#FFFFFF" />
-
 
     </LinearLayout>
 </ScrollView>
